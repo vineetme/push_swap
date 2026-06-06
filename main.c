@@ -15,22 +15,22 @@
 
 int	main(int argc, char **argv)
 {
-	int	i;
+	int		i;
+	long	value;
 
 	i = 1;
 	if (argc == 1)
-		return (1);
-	while (i < argc && is_valid_number(argv[i]))
-			i++;
-	if (i == argc)
+		return (0);
+	while (i < argc)
 	{
-		i = 1;
-		while (i < argc)
-		{
-			printf("%ld\n", ft_atol(argv[i]));
-			i++;
-		}
+		if (!is_valid_number(argv[i]))
+			return (error());
+		value = ft_atol(argv[i]);
+		if (!is_number_in_range(value))
+			return (error());
+		i++;
 	}
-	else		
-		write(2, "error\n", 6);
-}
+	if (has_duplicates(argc, argv))
+		return (error());
+	return (0);
+}		

@@ -25,4 +25,25 @@ unexpected crashes (like Segfaults).
 - Human Constraints: This project requires exactly 2 learners. Both must understand everything and
  split the work, detailing who did what in the README.md.  
 
+ROADMAP
 
+Phase 1: Validation
+-------------------
+is_valid_number()
+ft_atol()
+is_number_in_range()
+duplicate check
+
+Phase 2: Build data
+-------------------
+malloc nodes
+build stack A
+
+Phase 3: Sorting
+----------------
+small stack strategy
+large stack strategy
+
+Phase 4: Bonus
+--------------
+checker
