@@ -6,7 +6,7 @@
 /*   By: vmeharia <vmeharia@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/06 15:55:53 by vmeharia          #+#    #+#             */
-/*   Updated: 2026/06/06 15:55:57 by vmeharia         ###   ########.fr       */
+/*   Updated: 2026/06/06 20:08:55 by vmeharia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 long	ft_atol(char *str)
 {
-	int	i;
-	long num;
-	int	sign;
-	
+	int		i;
+	long	num;
+	int		sign;
+
 	num = 0;
 	sign = 1;
 	i = 0;
@@ -43,5 +43,3 @@ int main()
 	printf("%ld\n", ft_atol("-3456"));
 }
 */
-		
-

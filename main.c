@@ -6,7 +6,7 @@
 /*   By: vmeharia <vmeharia@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/06 15:56:21 by vmeharia          #+#    #+#             */
-/*   Updated: 2026/06/06 15:56:25 by vmeharia         ###   ########.fr       */
+/*   Updated: 2026/06/06 20:11:12 by vmeharia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,4 @@ int	main(int argc, char **argv)
 	if (has_duplicates(argc, argv))
 		return (error());
 	return (0);
-}		
+}

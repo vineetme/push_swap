@@ -6,7 +6,7 @@
 /*   By: vmeharia <vmeharia@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/06 15:56:04 by vmeharia          #+#    #+#             */
-/*   Updated: 2026/06/06 15:56:07 by vmeharia         ###   ########.fr       */
+/*   Updated: 2026/06/06 20:11:55 by vmeharia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	is_valid_number(char *str)
 	int	i;
 
 	i = 0;
-
 	if (str[i] == '+' || str[i] == '-')
 		i++;
 	if (str[i] == '\0')
