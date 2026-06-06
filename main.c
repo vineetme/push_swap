@@ -32,5 +32,6 @@ int	main(int argc, char **argv)
 	}
 	if (has_duplicates(argc, argv))
 		return (error());
+	debug_printstack(argc, argv);
 	return (0);
 }
