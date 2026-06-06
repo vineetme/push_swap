@@ -8,7 +8,9 @@ SRCS =	main.c \
 		is_valid_number.c \
 		is_number_in_range.c \
 		has_duplicates.c \
-		error.c
+		error.c \
+		new_node.c \
+		last_node.c \
 
 %.o: %.c push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@

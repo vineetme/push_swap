@@ -18,10 +18,18 @@
 # include <stdlib.h>
 # include <limits.h>
 
+typedef struct s_node
+{
+	int				value;
+	struct s_node	*next;
+}	t_node;
+
 int		is_valid_number(char *str);
 long	ft_atol(char *str);
 int		is_number_in_range(long number);
 int		error(void);
 int		has_duplicates(int argc, char **argv);
+t_node	*new_node(int value);
+t_node	*last_node(t_node *stack);
 
 #endif
