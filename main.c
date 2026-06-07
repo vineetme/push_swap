@@ -6,7 +6,7 @@
 /*   By: vmeharia <vmeharia@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/06 15:56:21 by vmeharia          #+#    #+#             */
-/*   Updated: 2026/06/06 20:11:12 by vmeharia         ###   ########.fr       */
+/*   Updated: 2026/06/07 19:09:40 by vmeharia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	main(int argc, char **argv)
 	int		i;
 	long	value;
 	t_node	*stack;
-	t_node	*smallest;
 
 	i = 1;
 	if (argc == 1)
@@ -37,7 +36,8 @@ int	main(int argc, char **argv)
 	stack = build_stack(argc, argv);
 	printf("Stack:\n");
 	debug_printstack(stack);
-	smallest = find_smallest(stack);
-	printf("Index of smalles: %d\n", find_index(stack, smallest));
+	sort_four(&stack);
+	printf("Stack after sort_four:\n");
+	debug_printstack(stack);
 	return (0);
 }
