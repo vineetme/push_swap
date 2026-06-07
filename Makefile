@@ -27,7 +27,12 @@ SRCS =	main.c \
 		rrr.c \
 		is_sorted.c \
 		sort_three.c \
-		sort_two.c
+		sort_two.c \
+		find_smallest.c \
+		find_index.c \
+		stack_size.c \
+		move_smallest_to_top.c \
+		sort_four.c
 
 %.o: %.c push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@

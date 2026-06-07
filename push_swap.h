@@ -48,5 +48,10 @@ void	rrr(t_node **a, t_node **b);
 int		is_sorted(t_node *stack);
 void	sort_three(t_node **stack);
 void	sort_two(t_node **stash);
+t_node	*find_smallest(t_node *stack);
+int		find_index(t_node *stack, t_node *node);
+int		stack_size(t_node *stack);
+void	move_smallest_to_top(t_node **stack);
+void	sort_four(t_node **a);
 
 #endif
