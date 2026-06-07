@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 {
 	int		i;
 	long	value;
-	t_node	*stack_b;
+	t_node	*stack;
 
 	i = 1;
 	if (argc == 1)
@@ -33,17 +33,11 @@ int	main(int argc, char **argv)
 	}
 	if (has_duplicates(argc, argv))
 		return (error());
-	stack_b = build_stack(argc, argv);
-	printf("B:\n");
-	debug_printstack(stack_b);
-	sb(&stack_b);
-	printf("B after sb:\n");
-	debug_printstack(stack_b);
-	ra(&stack_b);
-	printf("B after ra:\n");
-	debug_printstack(stack_b);
-	rra(&stack_b);
-	printf("B after rra:\n");
-	debug_printstack(stack_b);
+	stack = build_stack(argc, argv);
+	printf("Stack:\n");
+	debug_printstack(stack);
+	sort_two(&stack);
+	printf("Stack after sort_two:\n");
+	debug_printstack(stack);
 	return (0);
 }

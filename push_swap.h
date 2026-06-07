@@ -46,5 +46,7 @@ void	rra(t_node **a);
 void	rrb(t_node **b);
 void	rrr(t_node **a, t_node **b);
 int		is_sorted(t_node *stack);
+void	sort_three(t_node **stack);
+void	sort_two(t_node **stash);
 
 #endif

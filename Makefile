@@ -25,7 +25,9 @@ SRCS =	main.c \
 		rra.c \
 		rrb.c \
 		rrr.c \
-		is_sorted.c 
+		is_sorted.c \
+		sort_three.c \
+		sort_two.c
 
 %.o: %.c push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@
