@@ -34,6 +34,15 @@ t_node	*last_node(t_node *stack);
 void	add_back(t_node **stack, t_node *new);
 t_node	*build_stack(int argc, char **argv);
 void	debug_printstack(t_node *stack);
-void	sa(t_node **stack);
+void	sa(t_node **a);
+void	sb(t_node **b);
+void	ss(t_node **a, t_node **b);
+void	pb(t_node **a, t_node **b);
+void	pa(t_node **b, t_node **a);
+void	ra(t_node **a);
+void	rb(t_node **b);
+void	rra(t_node **a);
+void	rrb(t_node **b);
+void	rrr(t_node **a, t_node **b);
 
 #endif

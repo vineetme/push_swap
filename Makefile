@@ -14,7 +14,16 @@ SRCS =	main.c \
 		add_back.c \
 		build_stack.c \
 		debug_printstack.c \
-		sa.c
+		sa.c \
+		sb.c \
+		ss.c \
+		pb.c \
+		pa.c \
+		ra.c \
+		rb.c \
+		rra.c \
+		rrb.c \
+		rrr.c
 
 %.o: %.c push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@

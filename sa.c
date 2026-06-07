@@ -12,18 +12,18 @@
 
 #include "push_swap.h"
 
-void	sa(t_node **stack)
+void	sa(t_node **a)
 {
 	t_node	*first;
 	t_node	*second;
 
-	if (*stack == NULL)
+	if (*a == NULL)
 		return ;
-	if ((*stack)->next == NULL)
+	if ((*a)->next == NULL)
 		return ;
-	first = *stack;
+	first = *a;
 	second = first->next;
 	first->next = second->next;
 	second->next = first;
-	*stack = second;
+	*a = second;
 }
