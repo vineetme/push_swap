@@ -33,6 +33,7 @@ t_node	*new_node(int value);
 t_node	*last_node(t_node *stack);
 void	add_back(t_node **stack, t_node *new);
 t_node	*build_stack(int argc, char **argv);
-void	debug_printstack(int argc, char **argv);
+void	debug_printstack(t_node *stack);
+void	sa(t_node **stack);
 
 #endif

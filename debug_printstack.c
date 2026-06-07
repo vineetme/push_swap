@@ -13,14 +13,11 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-void	debug_printstack(int argc, char **argv)
+void	debug_printstack(t_node *stack)
 {
-	t_node	*ptr;
-
-	ptr = build_stack(argc, argv);
-	while (ptr != NULL)
+	while (stack != NULL)
 	{
-		printf("%d\n", ptr->value);
-		ptr = ptr->next;
+		printf("%d\n", stack->value);
+		stack = stack->next;
 	}
 }

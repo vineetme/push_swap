@@ -13,7 +13,8 @@ SRCS =	main.c \
 		last_node.c \
 		add_back.c \
 		build_stack.c \
-		debug_printstack.c
+		debug_printstack.c \
+		sa.c
 
 %.o: %.c push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@
