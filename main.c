@@ -18,7 +18,9 @@ int	main(int argc, char **argv)
 	int		i;
 	long	value;
 	t_node	*stack;
+	t_ops	ops;
 
+	ops.count = 0;
 	i = 1;
 	if (argc == 1)
 		return (0);
@@ -36,7 +38,7 @@ int	main(int argc, char **argv)
 	stack = build_stack(argc, argv);
 	printf("Stack:\n");
 	debug_printstack(stack);
-	simple_sort(&stack);
+	simple_sort(&stack, &ops);
 	printf("Stack after simple_sort:\n");
 	debug_printstack(stack);
 	return (0);

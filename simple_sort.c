@@ -12,8 +12,9 @@
 
 #include "push_swap.h"
 
-void	simple_sort(t_node **a)
+void	simple_sort(t_node **a, t_ops *ops)
 {
+	(void)ops;
 	t_node	*b;
 
 	b = NULL;

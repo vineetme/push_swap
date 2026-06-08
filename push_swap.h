@@ -24,6 +24,11 @@ typedef struct s_node
 	struct s_node	*next;
 }	t_node;
 
+typedef struct s_ops
+{
+	int	count;
+}	t_ops;
+
 int		is_valid_number(char *str);
 long	ft_atol(char *str);
 int		is_number_in_range(long number);
@@ -54,6 +59,6 @@ int		stack_size(t_node *stack);
 void	move_smallest_to_top(t_node **stack);
 void	sort_four(t_node **a);
 void	sort_five(t_node **a);
-void	simple_sort(t_node **a);
+void	simple_sort(t_node **a, t_ops *ops);
 
 #endif
