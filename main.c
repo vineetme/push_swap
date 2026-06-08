@@ -36,8 +36,8 @@ int	main(int argc, char **argv)
 	stack = build_stack(argc, argv);
 	printf("Stack:\n");
 	debug_printstack(stack);
-	sort_four(&stack);
-	printf("Stack after sort_four:\n");
+	sort_five(&stack);
+	printf("Stack after sort_five:\n");
 	debug_printstack(stack);
 	return (0);
 }
