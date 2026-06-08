@@ -14,7 +14,6 @@
 
 void	simple_sort(t_node **a)
 {
-	(void)ops;
 	t_node	*b;
 
 	b = NULL;
