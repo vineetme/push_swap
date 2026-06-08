@@ -47,3 +47,11 @@ large stack strategy
 Phase 4: Bonus
 --------------
 checker
+
+
+1. INPUT PARSER
+2. STRATEGY SELECTOR (simple/medium/complex/adaptive)
+3. ALGORITHM EXECUTOR
+4. STACK ENGINE
+5. OPS SYSTEM (history + counters)
+6. OUTPUT / BENCH REPORT

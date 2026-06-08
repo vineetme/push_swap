@@ -33,7 +33,8 @@ SRCS =	main.c \
 		stack_size.c \
 		move_smallest_to_top.c \
 		sort_four.c \
-		sort_five.c
+		sort_five.c \
+		simple_sort.c
 
 %.o: %.c push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@
