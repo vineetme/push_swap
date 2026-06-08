@@ -38,7 +38,7 @@ int	main(int argc, char **argv)
 	stack = build_stack(argc, argv);
 	printf("Stack:\n");
 	debug_printstack(stack);
-	simple_sort(&stack, &ops);
+	simple_sort(&stack);
 	printf("Stack after simple_sort:\n");
 	debug_printstack(stack);
 	return (0);
