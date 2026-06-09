@@ -55,5 +55,6 @@ void	move_smallest_to_top(t_node **stack);
 void	sort_four(t_node **a);
 void	sort_five(t_node **a);
 void	simple_sort(t_node **a);
+int		*stack_to_array(t_node *stack);
 
 #endif
