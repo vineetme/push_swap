@@ -18,9 +18,7 @@ int	main(int argc, char **argv)
 	int		i;
 	long	value;
 	t_node	*stack;
-	t_ops	ops;
 
-	ops.count = 0;
 	i = 1;
 	if (argc == 1)
 		return (0);
