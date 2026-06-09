@@ -6,7 +6,7 @@
 /*   By: vmeharia <vmeharia@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/06 20:12:17 by vmeharia          #+#    #+#             */
-/*   Updated: 2026/06/06 20:13:03 by vmeharia         ###   ########.fr       */
+/*   Updated: 2026/06/09 12:31:03 by kshalaba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 typedef struct s_node
 {
 	int				value;
+	int				index;
 	struct s_node	*next;
 }	t_node;
 
