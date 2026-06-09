@@ -30,4 +30,5 @@ void	rrb(t_node **b)
 	penultimate->next = NULL;
 	last->next = *b;
 	*b = last;
+	write(1, "rrb\n", 4);
 }

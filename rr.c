@@ -16,4 +16,5 @@ void	rr(t_node **a, t_node **b)
 {
 	ra(a);
 	rb(b);
+	write(1, "rr\n", 3);
 }

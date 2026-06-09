@@ -26,4 +26,5 @@ void	rb(t_node **b)
 	*b = first->next;
 	first->next = NULL;
 	last->next = first;
+	write(1, "rb\n", 3);
 }

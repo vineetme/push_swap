@@ -26,4 +26,5 @@ void	sa(t_node **a)
 	first->next = second->next;
 	second->next = first;
 	*a = second;
+	write(1, "sa\n", 3);
 }

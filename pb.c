@@ -22,4 +22,5 @@ void	pb(t_node **a, t_node **b)
 	*a = first->next;
 	first->next = *b;
 	*b = first;
+	write(1, "pb\n", 3);
 }
