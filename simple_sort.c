@@ -19,12 +19,21 @@ void	simple_sort(t_node **a)
 	b = NULL;
 	if (is_sorted(*a))
 		return ;
-	while (stack_size(*a) > 5)
+	if (stack_size(*a) == 2)
+		return (sort_two(a));
+	if (stack_size(*a) == 3)
+		return (sort_three(a));
+	if (stack_size(*a) == 4)
+		return (sort_four(a));
+	else
 	{
-		move_smallest_to_top(a);
-		pb (a, &b);
+		while (stack_size(*a) > 5)
+		{		
+			move_smallest_to_top(a);
+			pb (a, &b);
+		}
+		sort_five(a);
+		while (b != NULL)
+			pa(&b, a);
 	}
-	sort_five(a);
-	while (b != NULL)
-		pa(&b, a);
 }
