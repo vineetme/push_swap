@@ -16,4 +16,5 @@ void	ss(t_node **a, t_node **b)
 {
 	sa(a);
 	sb(b);
+	write(1, "ss\n", 3);
 }

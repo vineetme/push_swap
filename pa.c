@@ -22,4 +22,5 @@ void	pa(t_node **b, t_node **a)
 	*b = first->next;
 	first->next = *a;
 	*a = first;
+	write(1, "pa\n", 3);
 }

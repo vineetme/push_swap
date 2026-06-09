@@ -26,4 +26,5 @@ void	sb(t_node **b)
 	first->next = second->next;
 	second->next = first;
 	*b = second;
+	write(1, "sb\n", 3);
 }

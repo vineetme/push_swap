@@ -26,4 +26,5 @@ void	ra(t_node **a)
 	first->next = NULL;
 	last = last_node(*a);
 	last->next = first;
+	write(1, "ra\n", 3);
 }
