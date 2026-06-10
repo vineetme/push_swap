@@ -18,6 +18,7 @@ int	main(int argc, char **argv)
 	int		i;
 	long	value;
 	t_node	*stack;
+	t_node	*current;
 
 	i = 1;
 	if (argc == 1)
@@ -34,6 +35,14 @@ int	main(int argc, char **argv)
 	if (has_duplicates(argc, argv))
 		return (error());
 	stack = build_stack(argc, argv);
+	assign_indexes(stack);
+	printf("After assign_indexes:\n");
+	current = stack;
+	while (current)
+	{
+		printf("%d -> %d\n", current->value, current->index);
+		current = current->next;
+	}	
 	printf("Stack:\n");
 	debug_printstack(stack);
 	simple_sort(&stack);

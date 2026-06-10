@@ -28,7 +28,7 @@ void	simple_sort(t_node **a)
 	else
 	{
 		while (stack_size(*a) > 5)
-		{		
+		{
 			move_smallest_to_top(a);
 			pb (a, &b);
 		}
