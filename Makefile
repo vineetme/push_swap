@@ -35,7 +35,12 @@ SRCS =	main.c \
 		sort_four.c \
 		sort_five.c \
 		simple_sort.c \
-		stack_to_array.c
+		stack_to_array.c \
+		merge_sort.c \
+		merge.c \
+		split_array.c \
+		binary_search.c \
+		assign_indexes.c
 
 %.o: %.c push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@

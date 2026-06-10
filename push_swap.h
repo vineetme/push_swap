@@ -57,5 +57,10 @@ void	sort_four(t_node **a);
 void	sort_five(t_node **a);
 void	simple_sort(t_node **a);
 int		*stack_to_array(t_node *stack);
+void	merge_sort(int *array, int size);
+void	merge(int *left, int *right, int *array, int size[2]);
+void	split_array(int *array, int *left, int *right, int size);
+int		binary_search(int *array, int size, int value);
+void	assign_indexes(t_node *stack);
 
 #endif

@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int *stack_to_array(t_node *stack)
+int	*stack_to_array(t_node *stack)
 {
 	t_node	*current;
 	int		*array;
