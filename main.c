@@ -21,12 +21,15 @@ int	main(int argc, char **argv)
 	t_node		*stack;
 	t_node		*current;
 
+	if (argc == 1)
+		return (0);
+
 	if (parse_flags(argc, argv, &config))
 		return (1);
 
 	i = config.first_number;
-	if (argc == 1)
-		return (0);
+//	if (argc == 1)
+//		return (0);
 	while (i < argc)
 	{
 		if (!is_valid_number(argv[i]))
@@ -49,6 +52,8 @@ int	main(int argc, char **argv)
 	}	
 	printf("Stack:\n");
 	debug_printstack(stack);
+	write(1, "Disorder: ", 10);
+	ft_putfloat(disorder(stack));
 	simple_sort(&stack);
 	printf("Stack after simple_sort:\n");
 	debug_printstack(stack);

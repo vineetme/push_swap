@@ -81,5 +81,7 @@ void		assign_indexes(t_node *stack);
 int			parse_flags(int argc, char **argv, t_config *config);
 int			ft_strcmp(char *s1, char *s2);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
+float		disorder(t_node *stack);
+void		ft_putfloat(float num);
 
 #endif
