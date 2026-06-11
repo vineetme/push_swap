@@ -24,5 +24,5 @@ float	disorder(t_node *stack)
 		}
 		first = first->next;
 	}
-	return ((float)mistakes / (float)pairs);
+	return (((float)mistakes / (float)pairs) * 100);
 }

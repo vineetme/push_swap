@@ -27,5 +27,6 @@ void	ft_putfloat(float num)
     ft_putchar('.');
     ft_putchar((frac_part / 10) + '0');
     ft_putchar((frac_part % 10) + '0');
+	ft_putchar('%');
 	ft_putchar('\n');
 }
