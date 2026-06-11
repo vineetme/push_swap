@@ -15,12 +15,16 @@
 
 int	main(int argc, char **argv)
 {
-	int		i;
-	long	value;
-	t_node	*stack;
-	t_node	*current;
+	t_config	config;
+	int			i;
+	long		value;
+	t_node		*stack;
+	t_node		*current;
 
-	i = 1;
+	if (parse_flags(argc, argv, &config))
+		return (1);
+
+	i = config.first_number;
 	if (argc == 1)
 		return (0);
 	while (i < argc)
@@ -32,9 +36,9 @@ int	main(int argc, char **argv)
 			return (error());
 		i++;
 	}
-	if (has_duplicates(argc, argv))
+	if (has_duplicates(argc, argv, config.first_number))
 		return (error());
-	stack = build_stack(argc, argv);
+	stack = build_stack(argc, argv, config.first_number);
 	assign_indexes(stack);
 	printf("After assign_indexes:\n");
 	current = stack;

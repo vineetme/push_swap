@@ -12,13 +12,13 @@
 
 #include "push_swap.h"
 
-t_node	*build_stack(int argc, char **argv)
+t_node	*build_stack(int argc, char **argv, int start)
 {
 	int		i;
 	t_node	*stack;
 	t_node	*new;
 
-	i = 1;
+	i = start;
 	stack = new_node(ft_atol(argv[i]));
 	i++;
 	while (i < argc)

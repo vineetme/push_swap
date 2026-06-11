@@ -25,42 +25,61 @@ typedef struct s_node
 	struct s_node	*next;
 }	t_node;
 
-int		is_valid_number(char *str);
-long	ft_atol(char *str);
-int		is_number_in_range(long number);
-int		error(void);
-int		has_duplicates(int argc, char **argv);
-t_node	*new_node(int value);
-t_node	*last_node(t_node *stack);
-void	add_back(t_node **stack, t_node *new);
-t_node	*build_stack(int argc, char **argv);
-void	debug_printstack(t_node *stack);
-void	sa(t_node **a);
-void	sb(t_node **b);
-void	ss(t_node **a, t_node **b);
-void	pb(t_node **a, t_node **b);
-void	pa(t_node **b, t_node **a);
-void	ra(t_node **a);
-void	rb(t_node **b);
-void	rr(t_node **a, t_node **b);
-void	rra(t_node **a);
-void	rrb(t_node **b);
-void	rrr(t_node **a, t_node **b);
-int		is_sorted(t_node *stack);
-void	sort_three(t_node **stack);
-void	sort_two(t_node **stash);
-t_node	*find_smallest(t_node *stack);
-int		find_index(t_node *stack, t_node *node);
-int		stack_size(t_node *stack);
-void	move_smallest_to_top(t_node **stack);
-void	sort_four(t_node **a);
-void	sort_five(t_node **a);
-void	simple_sort(t_node **a);
-int		*stack_to_array(t_node *stack);
-void	merge_sort(int *array, int size);
-void	merge(int *left, int *right, int *array, int size[2]);
-void	split_array(int *array, int *left, int *right, int size);
-int		binary_search(int *array, int size, int value);
-void	assign_indexes(t_node *stack);
+typedef enum e_strategy
+{
+	simple,
+	medium,
+	complex,
+	adaptive
+}	t_strategy;
+
+typedef struct s_config
+{
+	t_strategy	strategy;
+	int			bench;
+	int			first_number;
+	int			strategy_set;
+}	t_config;
+
+int			is_valid_number(char *str);
+long		ft_atol(char *str);
+int			is_number_in_range(long number);
+int			error(void);
+int			has_duplicates(int argc, char **argv, int start);
+t_node		*new_node(int value);
+t_node		*last_node(t_node *stack);
+void		add_back(t_node **stack, t_node *new);
+t_node		*build_stack(int argc, char **argv, int start);
+void		debug_printstack(t_node *stack);
+void		sa(t_node **a);
+void		sb(t_node **b);
+void		ss(t_node **a, t_node **b);
+void		pb(t_node **a, t_node **b);
+void		pa(t_node **b, t_node **a);
+void		ra(t_node **a);
+void		rb(t_node **b);
+void		rr(t_node **a, t_node **b);
+void		rra(t_node **a);
+void		rrb(t_node **b);
+void		rrr(t_node **a, t_node **b);
+int			is_sorted(t_node *stack);
+void		sort_three(t_node **stack);
+void		sort_two(t_node **stash);
+t_node		*find_smallest(t_node *stack);
+int			find_index(t_node *stack, t_node *node);
+int			stack_size(t_node *stack);
+void		move_smallest_to_top(t_node **stack);
+void		sort_four(t_node **a);
+void		sort_five(t_node **a);
+void		simple_sort(t_node **a);
+int			*stack_to_array(t_node *stack);
+void		merge_sort(int *array, int size);
+void		merge(int *left, int *right, int *array, int size[2]);
+void		split_array(int *array, int *left, int *right, int size);
+int			binary_search(int *array, int size, int value);
+void		assign_indexes(t_node *stack);
+int			parse_flags(int argc, char **argv, t_config *config);
+int			ft_strcmp(char *s1, char *s2);
+int			ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif
