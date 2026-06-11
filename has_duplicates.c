@@ -12,12 +12,12 @@
 
 #include "push_swap.h"
 
-int	has_duplicates(int argc, char **argv)
+int	has_duplicates(int argc, char **argv, int start)
 {
 	int	i;
 	int	j;
 
-	i = 1;
+	i = start;
 	while (i < argc - 1)
 	{
 		j = i + 1;

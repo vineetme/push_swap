@@ -40,7 +40,12 @@ SRCS =	main.c \
 		merge.c \
 		split_array.c \
 		binary_search.c \
-		assign_indexes.c
+		assign_indexes.c \
+		parse_flags.c \
+		ft_strcmp.c \
+		ft_strncmp.c \
+		disorder.c \
+		ft_putfloat.c
 
 %.o: %.c push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@
