@@ -28,7 +28,8 @@ void	ss(t_node **a, t_node **b, t_statistics *stats)
 {
 	swap_stack(a);
 	swap_stack(b);
-	write(1, "ss\n", 3);
+	if (!stats->silent)
+		write(1, "ss\n", 3);
 	stats->total_ops++;
 	stats->ss_count++;
 }

@@ -31,7 +31,8 @@ void	sb(t_node **b, t_statistics *stats)
 	if ((*b)->next == NULL)
 		return ;
 	swap_stack(b);
-	write(1, "sb\n", 3);
+	if (!stats->silent)	
+		write(1, "sb\n", 3);
 	stats->total_ops++;
 	stats->sb_count++;
 }

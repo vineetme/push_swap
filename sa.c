@@ -31,7 +31,8 @@ void	sa(t_node **a, t_statistics *stats)
 	if ((*a)->next == NULL)
 		return ;
 	swap_stack(a);
-	write(1, "sa\n", 3);
+	if (!stats->silent)
+		write(1, "sa\n", 3);
 	stats->total_ops++;
 	stats->sa_count++;
 }

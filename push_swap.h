@@ -48,6 +48,7 @@ typedef struct s_statistics
 	int		rra_count;
 	int		rrb_count;
 	int		rrr_count;
+	int		silent;
 	char	*strategy_name;
 	char	*complexity_class;
 }	t_statistics;
@@ -103,9 +104,13 @@ int			parse_flags(int argc, char **argv, t_config *config);
 int			ft_strcmp(char *s1, char *s2);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 float		compute_disorder(t_node *stack);
-void		ft_putfloat(float num);
+void		ft_putchar_fd(char c, int fd);
+void		ft_putnbr_fd(int n, int fd);
+void		ft_putfloat_fd(float num, int fd);
 void		init_statistics(t_statistics *stats);
 void		resolve_strategy(t_config *config);
 void		execute_strategy(t_node **stack, t_config *config);
+void		print_benchmark(t_config *config);
+int			ft_strlen(char *str);
 
 #endif

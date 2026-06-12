@@ -31,7 +31,8 @@ void	rb(t_node **b, t_statistics *stats)
 	if ((*b)->next == NULL)
 		return ;
 	rotate_stack(b);
-	write(1, "rb\n", 3);
+	if (!stats->silent)
+		write(1, "rb\n", 3);
 	stats->total_ops++;
 	stats->rb_count++;
 }

@@ -28,7 +28,8 @@ void	rr(t_node **a, t_node **b, t_statistics *stats)
 {
 	rotate_stack(a);
 	rotate_stack(b);
-	write(1, "rr\n", 3);
+	if (!stats->silent)
+		write(1, "rr\n", 3);
 	stats->total_ops++;
 	stats->rr_count++;
 }

@@ -35,7 +35,8 @@ void	rrb(t_node **b, t_statistics *stats)
 	if ((*b)->next == NULL)
 		return ;
 	reverse_rotate_stack(b);
-	write(1, "rrb\n", 4);
+	if (!stats->silent)
+		write(1, "rrb\n", 4);
 	stats->total_ops++;
 	stats->rrb_count++;
 }

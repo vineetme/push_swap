@@ -1,18 +1,6 @@
 #include "push_swap.h"
 
-static void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-static void	ft_putnbr(int n)
-{
-	if (n >= 10)
-		ft_putnbr(n / 10);
-	ft_putchar((n % 10) + '0');
-}
-
-void	ft_putfloat(float num)
+void	ft_putfloat_fd(float num, int fd)
 {
 	int	int_part;
 	int	frac_part;
@@ -24,10 +12,10 @@ void	ft_putfloat(float num)
 		int_part++;
 		frac_part = 0;
 	}
-	ft_putnbr(int_part);
-	ft_putchar('.');
-	ft_putchar((frac_part / 10) + '0');
-	ft_putchar((frac_part % 10) + '0');
-	ft_putchar('%');
-	ft_putchar('\n');
+	ft_putnbr_fd(int_part, fd);
+	ft_putchar_fd('.', fd);
+	ft_putchar_fd(((frac_part / 10) + '0'), fd);
+	ft_putchar_fd(((frac_part % 10) + '0'), fd);
+	ft_putchar_fd(('%'), fd);
+	ft_putchar_fd(('\n'), fd);
 }

@@ -22,7 +22,8 @@ void	pa(t_node **b, t_node **a, t_statistics *stats)
 	*b = first->next;
 	first->next = *a;
 	*a = first;
-	write(1, "pa\n", 3);
+	if (!stats->silent)
+		write(1, "pa\n", 3);
 	stats->total_ops++;
 	stats->pa_count++;
 }

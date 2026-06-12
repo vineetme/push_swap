@@ -15,6 +15,7 @@ void	init_statistics(t_statistics *stats)
 	stats->rra_count = 0;
 	stats->rrb_count = 0;
 	stats->rrr_count = 0;
+	stats->silent = 0;
 	stats->strategy_name = NULL;
 	stats->complexity_class = NULL;
 }

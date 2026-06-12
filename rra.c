@@ -35,7 +35,8 @@ void	rra(t_node **a, t_statistics *stats)
 	if ((*a)->next == NULL)
 		return ;
 	reverse_rotate_stack(a);
-	write(1, "rra\n", 4);
+	if (!stats->silent)
+		write(1, "rra\n", 4);
 	stats->total_ops++;
 	stats->rra_count++;
 }
