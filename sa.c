@@ -12,19 +12,27 @@
 
 #include "push_swap.h"
 
-void	sa(t_node **a)
+static	void	swap_stack(t_node **stack)
 {
 	t_node	*first;
 	t_node	*second;
 
+	first = *stack;
+	second = first->next;
+	first->next = second->next;
+	second->next = first;
+	*stack = second;
+}
+
+void	sa(t_node **a, t_statistics *stats)
+{
 	if (*a == NULL)
 		return ;
 	if ((*a)->next == NULL)
 		return ;
-	first = *a;
-	second = first->next;
-	first->next = second->next;
-	second->next = first;
-	*a = second;
-	write(1, "sa\n", 3);
+	swap_stack(a);
+	if (!stats->silent)
+		write(1, "sa\n", 3);
+	stats->total_ops++;
+	stats->sa_count++;
 }

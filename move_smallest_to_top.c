@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	move_smallest_to_top(t_node **stack)
+void	move_smallest_to_top(t_node **stack, t_statistics *stats)
 {
 	t_node	*smallest;
 	int		index;
@@ -24,11 +24,11 @@ void	move_smallest_to_top(t_node **stack)
 	if (index <= size / 2)
 	{
 		while (*stack != smallest)
-			ra(stack);
+			ra(stack, stats);
 	}
 	else
 	{
 		while (*stack != smallest)
-			rra(stack);
+			rra(stack, stats);
 	}
 }

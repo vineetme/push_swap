@@ -1,16 +1,16 @@
 #include "push_swap.h"
 
-float	disorder(t_node *stack)
+float	compute_disorder(t_node *stack)
 {
-	t_node *first;
-	t_node *second;
-	int	mistakes;
-	int	pairs;
+	t_node	*first;
+	t_node	*second;
+	int		mistakes;
+	int		pairs;
 
 	mistakes = 0;
 	pairs = 0;
 	if (!stack || !stack->next)
-		return 0.0f;
+		return (0.0f);
 	first = stack;
 	while (first != NULL)
 	{
@@ -24,5 +24,5 @@ float	disorder(t_node *stack)
 		}
 		first = first->next;
 	}
-	return ((float)mistakes / (float)pairs);
+	return (((float)mistakes / (float)pairs) * 100);
 }

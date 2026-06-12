@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	pb(t_node **a, t_node **b)
+void	pb(t_node **a, t_node **b, t_statistics *stats)
 {
 	t_node	*first;
 
@@ -22,5 +22,8 @@ void	pb(t_node **a, t_node **b)
 	*a = first->next;
 	first->next = *b;
 	*b = first;
-	write(1, "pb\n", 3);
+	if (!stats->silent)
+		write(1, "pb\n", 3);
+	stats->total_ops++;
+	stats->pb_count++;
 }

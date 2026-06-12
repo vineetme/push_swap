@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	simple_sort(t_node **a)
+void	simple_sort(t_node **a, t_statistics *stats)
 {
 	t_node	*b;
 
@@ -20,20 +20,20 @@ void	simple_sort(t_node **a)
 	if (is_sorted(*a))
 		return ;
 	if (stack_size(*a) == 2)
-		return (sort_two(a));
+		return (sort_two(a, stats));
 	if (stack_size(*a) == 3)
-		return (sort_three(a));
+		return (sort_three(a, stats));
 	if (stack_size(*a) == 4)
-		return (sort_four(a));
+		return (sort_four(a, stats));
 	else
 	{
 		while (stack_size(*a) > 5)
 		{
-			move_smallest_to_top(a);
-			pb (a, &b);
+			move_smallest_to_top(a, stats);
+			pb (a, &b, stats);
 		}
-		sort_five(a);
+		sort_five(a, stats);
 		while (b != NULL)
-			pa(&b, a);
+			pa(&b, a, stats);
 	}
 }
