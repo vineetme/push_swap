@@ -15,21 +15,18 @@
 
 int	main(int argc, char **argv)
 {
-	t_config	config;
-	int			i;
-	long		value;
-	t_node		*stack;
-	t_node		*current;
+	t_config		config;
+	int				i;
+	long			value;
+	t_node			*stack;
+	t_node			*current;
 
 	if (argc == 1)
 		return (0);
-
+	init_statistics(&config.stats);
 	if (parse_flags(argc, argv, &config))
 		return (1);
-
 	i = config.first_number;
-//	if (argc == 1)
-//		return (0);
 	while (i < argc)
 	{
 		if (!is_valid_number(argv[i]))
@@ -41,21 +38,37 @@ int	main(int argc, char **argv)
 	}
 	if (has_duplicates(argc, argv, config.first_number))
 		return (error());
+	
 	stack = build_stack(argc, argv, config.first_number);
+	
+	printf("Stack:\n");
+	debug_printstack(stack);
+
 	assign_indexes(stack);
+
 	printf("After assign_indexes:\n");
 	current = stack;
 	while (current)
 	{
 		printf("%d -> %d\n", current->value, current->index);
 		current = current->next;
-	}	
-	printf("Stack:\n");
-	debug_printstack(stack);
+	}
+
+	config.stats.disorder = compute_disorder(stack);
+
 	write(1, "Disorder: ", 10);
-	ft_putfloat(disorder(stack));
+	ft_putfloat(config.stats.disorder);
+
+
+	resolve_strategy(&config);
+	printf("resolved strategy = %d\n", config.resolved_strategy);
+	printf("strategy name = %s\n", config.stats.strategy_name);
+	printf("complexity class = %s\n", config.stats.complexity_class);
+
 	simple_sort(&stack);
+
 	printf("Stack after simple_sort:\n");
 	debug_printstack(stack);
+
 	return (0);
 }

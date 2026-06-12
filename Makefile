@@ -44,8 +44,10 @@ SRCS =	main.c \
 		parse_flags.c \
 		ft_strcmp.c \
 		ft_strncmp.c \
-		disorder.c \
-		ft_putfloat.c
+		compute_disorder.c \
+		ft_putfloat.c \
+		init_statistics.c \
+		resolve_strategy.c
 
 %.o: %.c push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@

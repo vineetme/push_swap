@@ -55,3 +55,79 @@ checker
 4. STACK ENGINE
 5. OPS SYSTEM (history + counters)
 6. OUTPUT / BENCH REPORT
+
+
+Parse flags
+↓
+Validate input
+↓
+Build stack
+↓
+Assign indexes
+↓
+Compute disorder
+↓
+Resolve strategy
+↓
+Check sorted
+↓
+Execute strategy (if needed)
+↓
+Benchmark output
+↓
+Cleanup
+
+
+Remaining:
+
+Phase 1
+--------
+Execution flow
+
+Phase 2
+--------
+Data ownership
+(t_config, t_statistics)
+
+Phase 3
+--------
+Strategy dispatch mechanism
+
+Phase 4
+--------
+Operation accounting infrastructure
+
+Phase 5
+--------
+Benchmark reporting
+
+Phase 6
+--------
+Actual strategies
+
+
+
+t_config
+├─ strategy requested
+├─ bench enabled
+├─ first_number
+├─ strategy_set
+└─ stats
+     ├─ disorder
+     ├─ strategy_name
+     ├─ complexity_class
+     ├─ total_ops
+     └─ operation counts
+
+main()
+│
+├─ parse_flags()
+├─ validate_input()
+├─ build_stack()
+├─ assign_indexes()
+├─ compute_disorder()
+├─ resolve_strategy()
+├─ check_sorted()
+├─ execute_strategy()
+├─ print_benchmark()
+└─ cleanup()

@@ -33,12 +33,33 @@ typedef enum e_strategy
 	adaptive
 }	t_strategy;
 
+typedef struct s_statistics
+{
+	float	disorder;
+	int		total_ops;
+	int		sa_count;
+	int		sb_count;
+	int		ss_count;
+	int		pa_count;
+	int		pb_count;
+	int		ra_count;
+	int		rb_count;
+	int		rr_count;
+	int		rra_count;
+	int		rrb_count;
+	int		rrr_count;
+	char	*strategy_name;
+	char	*complexity_class;
+}	t_statistics;
+
 typedef struct s_config
 {
-	t_strategy	strategy;
-	int			bench;
-	int			first_number;
-	int			strategy_set;
+	t_strategy		strategy;
+	int				bench;
+	int				first_number;
+	int				strategy_set;
+	t_statistics	stats;
+	t_strategy		resolved_strategy;
 }	t_config;
 
 int			is_valid_number(char *str);
@@ -81,7 +102,9 @@ void		assign_indexes(t_node *stack);
 int			parse_flags(int argc, char **argv, t_config *config);
 int			ft_strcmp(char *s1, char *s2);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
-float		disorder(t_node *stack);
+float		compute_disorder(t_node *stack);
 void		ft_putfloat(float num);
+void		init_statistics(t_statistics *stats);
+void		resolve_strategy(t_config *config);
 
 #endif
