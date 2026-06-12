@@ -12,19 +12,26 @@
 
 #include "push_swap.h"
 
-void	ra(t_node **a)
+static void	rotate_stack(t_node **stack)
 {
 	t_node	*first;
 	t_node	*last;
 
+	first = *stack;
+	*stack = first->next;
+	first->next = NULL;
+	last = last_node(*stack);
+	last->next = first;
+}
+
+void	ra(t_node **a, t_statistics *stats)
+{
 	if (*a == NULL)
 		return ;
 	if ((*a)->next == NULL)
 		return ;
-	first = *a;
-	*a = first->next;
-	first->next = NULL;
-	last = last_node(*a);
-	last->next = first;
+	rotate_stack(a);
 	write(1, "ra\n", 3);
+	stats->total_ops++;
+	stats->ra_count++;
 }

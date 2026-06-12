@@ -12,9 +12,23 @@
 
 #include "push_swap.h"
 
-void	ss(t_node **a, t_node **b)
+static	void	swap_stack(t_node **stack)
 {
-	sa(a);
-	sb(b);
+	t_node	*first;
+	t_node	*second;
+
+	first = *stack;
+	second = first->next;
+	first->next = second->next;
+	second->next = first;
+	*stack = second;
+}
+
+void	ss(t_node **a, t_node **b, t_statistics *stats)
+{
+	swap_stack(a);
+	swap_stack(b);
 	write(1, "ss\n", 3);
+	stats->total_ops++;
+	stats->ss_count++;
 }

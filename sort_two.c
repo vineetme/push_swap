@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-void	sort_two(t_node **stash)
+void	sort_two(t_node **stash, t_statistics *stats)
 {
 	if (is_sorted(*stash))
 		return ;
-	sa(stash);
+	sa(stash, stats);
 }

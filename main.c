@@ -73,5 +73,10 @@ int	main(int argc, char **argv)
 	printf("Stack after applying strategy:\n");
 	debug_printstack(stack);
 
+	printf("total_ops = %d\n", config.stats.total_ops);
+	printf("sa = %d\n", config.stats.sa_count);
+	printf("pb = %d\n", config.stats.pb_count);
+	printf("ra = %d\n", config.stats.ra_count);
+
 	return (0);
 }
