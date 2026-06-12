@@ -47,7 +47,8 @@ SRCS =	main.c \
 		compute_disorder.c \
 		ft_putfloat.c \
 		init_statistics.c \
-		resolve_strategy.c
+		resolve_strategy.c \
+		execute_strategy.c
 
 %.o: %.c push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@

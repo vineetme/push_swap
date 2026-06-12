@@ -106,5 +106,6 @@ float		compute_disorder(t_node *stack);
 void		ft_putfloat(float num);
 void		init_statistics(t_statistics *stats);
 void		resolve_strategy(t_config *config);
+void		execute_strategy(t_node **stack, t_config *config);
 
 #endif

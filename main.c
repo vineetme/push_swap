@@ -24,8 +24,10 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		return (0);
 	init_statistics(&config.stats);
+
 	if (parse_flags(argc, argv, &config))
 		return (1);
+
 	i = config.first_number;
 	while (i < argc)
 	{
@@ -61,13 +63,14 @@ int	main(int argc, char **argv)
 
 
 	resolve_strategy(&config);
+
 	printf("resolved strategy = %d\n", config.resolved_strategy);
 	printf("strategy name = %s\n", config.stats.strategy_name);
 	printf("complexity class = %s\n", config.stats.complexity_class);
 
-	simple_sort(&stack);
+	execute_strategy(&stack, &config);
 
-	printf("Stack after simple_sort:\n");
+	printf("Stack after applying strategy:\n");
 	debug_printstack(stack);
 
 	return (0);
