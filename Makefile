@@ -53,7 +53,11 @@ SRCS =	main.c \
 		execute_strategy.c \
 		print_benchmark.c \
 		ft_strlen.c \
-		radix_sort.c
+		radix_sort.c \
+		move_node_to_top.c \
+		push_chunk_to_b.c \
+		restore_from_b.c \
+		chunk_sort.c
 
 %.o: %.c push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@
