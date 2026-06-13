@@ -7,10 +7,5 @@ void	execute_strategy(t_node **stack, t_config *config)
 	else if (config->resolved_strategy == medium)
 		simple_sort(stack, &config->stats);
 	else if (config->resolved_strategy == complex)
-		simple_sort(stack, &config->stats);
+		radix_sort(stack, &config->stats);
 }
-
-
-	
-
-

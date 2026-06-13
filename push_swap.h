@@ -112,5 +112,6 @@ void		resolve_strategy(t_config *config);
 void		execute_strategy(t_node **stack, t_config *config);
 void		print_benchmark(t_config *config);
 int			ft_strlen(char *str);
+void		radix_sort(t_node **a, t_statistics *stats);
 
 #endif

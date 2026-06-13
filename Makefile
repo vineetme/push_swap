@@ -52,7 +52,8 @@ SRCS =	main.c \
 		resolve_strategy.c \
 		execute_strategy.c \
 		print_benchmark.c \
-		ft_strlen.c
+		ft_strlen.c \
+		radix_sort.c
 
 %.o: %.c push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@
