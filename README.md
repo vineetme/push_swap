@@ -131,3 +131,49 @@ main()
 ├─ execute_strategy()
 ├─ print_benchmark()
 └─ cleanup()
+
+Radix Algo:
+max_bits = ...
+
+for each bit
+{
+    size = size_of_a_at_start
+
+    repeat size times
+    {
+        inspect top element
+
+        if bit == 0
+            pb
+        else
+            ra
+    }
+
+    while (B not empty)
+        pa
+}
+
+1. Normalize values to indexes.
+2. Determine max_bits.
+3. For each bit:
+       process original size elements
+       0 -> pb
+       1 -> ra
+4. pa everything back.
+5. Repeat for next bit.
+
+radix_sort()
+    get_max_bits()
+
+    for each bit
+        process_bit_pass()
+
+        restore_from_b()
+
+process_bit_pass()
+    repeat original_size times
+
+        if current bit == 0
+            pb
+        else
+            ra
