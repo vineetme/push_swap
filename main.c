@@ -71,8 +71,8 @@ int	main(int argc, char **argv)
 
 	execute_strategy(&stack, &config);
 
-//	printf("Stack after applying strategy:\n");
-//	debug_printstack(stack);
+	printf("Stack after applying strategy:\n");
+	debug_printstack(stack);
 
 	if (config.bench)
 		print_benchmark(&config);
