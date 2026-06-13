@@ -16,7 +16,7 @@ static t_node	*find_biggest_node(t_node *stack)
 	return (biggest);
 }
 
-void restore_from_b(t_node **a, t_node **b, t_statistics *stats)
+void	restore_from_b(t_node **a, t_node **b, t_statistics *stats)
 {
 	t_node	*biggest;
 

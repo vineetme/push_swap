@@ -114,9 +114,9 @@ void		print_benchmark(t_config *config);
 int			ft_strlen(char *str);
 void		radix_sort(t_node **a, t_statistics *stats);
 void		push_chunk_to_b(t_node **a, t_node **b, t_statistics *stats);
-void		move_node_to_top(t_node **stack, t_node *target, t_statistics *stats);
+void		move_node_to_top(t_node **stack, t_node *target,
+				t_statistics *stats);
 void		restore_from_b(t_node **a, t_node **b, t_statistics *stats);
 void		chunk_sort(t_node **a, t_statistics *stats);
-
 
 #endif
