@@ -54,6 +54,11 @@ void	radix_sort(t_node **a, t_statistics *stats)
 	int		max_bits;
 	int		bit;
 
+	if (stack_size(*a) <= 5)
+	{
+		simple_sort(a, stats);
+		return ;
+	}
 	b = NULL;
 	bit = 0;
 	max_bits = get_max_bits(*a);
