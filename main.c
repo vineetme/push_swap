@@ -82,5 +82,6 @@ int	main(int argc, char **argv)
 //	printf("pb = %d\n", config.stats.pb_count);
 //	printf("ra = %d\n", config.stats.ra_count);
 
+	free_stack(&stack);
 	return (0);
 }
