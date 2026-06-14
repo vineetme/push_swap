@@ -1,41 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   restore_from_b.c                                   :+:      :+:    :+:   */
+/*   build_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmeharia <vmeharia@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/13 22:59:46 by vmeharia          #+#    #+#             */
-/*   Updated: 2026/06/13 22:59:47 by vmeharia         ###   ########.fr       */
+/*   Created: 2026/06/07 00:49:51 by vmeharia          #+#    #+#             */
+/*   Updated: 2026/06/07 00:49:53 by vmeharia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static t_node	*find_biggest_node(t_node *stack)
+void	move_b_to_top(t_node **b, t_node *target, t_statistics *stats)
 {
-	t_node	*biggest;
+	int	mid;
+	int	position;
 
-	if (stack == NULL)
-		return (NULL);
-	biggest = stack;
-	while (stack != NULL)
+	mid = stack_size(*b) / 2;
+	position = find_index(*b, target);
+	if (position <= mid)
 	{
-		if (stack->index > biggest->index)
-			biggest = stack;
-		stack = stack->next;
+		while (*b != target)
+			rb(b, stats);
 	}
-	return (biggest);
-}
-
-void	restore_from_b(t_node **a, t_node **b, t_statistics *stats)
-{
-	t_node	*biggest;
-
-	while (*b)
+	else
 	{
-		biggest = find_biggest_node(*b);
-		move_b_to_top(b, biggest, stats);
-		pa(b, a, stats);
+		while (*b != target)
+			rrb(b, stats);
 	}
 }

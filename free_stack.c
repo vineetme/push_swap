@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_node_to_top.c                                 :+:      :+:    :+:   */
+/*   build_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vmeharia <vmeharia@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/13 22:56:06 by vmeharia          #+#    #+#             */
-/*   Updated: 2026/06/13 22:56:10 by vmeharia         ###   ########.fr       */
+/*   Created: 2026/06/07 00:49:51 by vmeharia          #+#    #+#             */
+/*   Updated: 2026/06/07 00:49:53 by vmeharia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	move_node_to_top(t_node **stack, t_node *target, t_statistics *stats)
+void	free_stack(t_node **stack)
 {
-	int	mid;
-	int	position;
+	t_node	*tmp;
 
-	mid = stack_size(*stack) / 2;
-	position = find_index(*stack, target);
-	if (position <= mid)
+	while (*stack)
 	{
-		while (*stack != target)
-			ra(stack, stats);
-	}
-	else
-	{
-		while (*stack != target)
-			rra(stack, stats);
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
 	}
 }
