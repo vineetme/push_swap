@@ -42,7 +42,7 @@ int	main(int argc, char **argv)
 	init_statistics(&config.stats);
 	if (parse_flags(argc, argv, &config))
 		return (1);
-	config.stats.silent = config.bench;
+	config.stats.silent = 0;
 	if (validate_inputs(argc, argv, config.first_number))
 		return (error());
 	stack = build_stack(argc, argv, config.first_number);
