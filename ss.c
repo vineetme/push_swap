@@ -26,8 +26,10 @@ static	void	swap_stack(t_node **stack)
 
 void	ss(t_node **a, t_node **b, t_statistics *stats)
 {
-	swap_stack(a);
-	swap_stack(b);
+	if (*a && (*a)->next)
+		swap_stack(a);
+	if (*b && (*b)->next)
+		swap_stack(b);
 	if (!stats->silent)
 		write(1, "ss\n", 3);
 	stats->total_ops++;

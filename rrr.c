@@ -30,8 +30,10 @@ static void	reverse_rotate_stack(t_node **stack)
 
 void	rrr(t_node **a, t_node **b, t_statistics *stats)
 {
-	reverse_rotate_stack(a);
-	reverse_rotate_stack(b);
+	if (*a && (*a)->next)
+		reverse_rotate_stack(a);
+	if (*b && (*b)->next)
+		reverse_rotate_stack(b);
 	if (!stats->silent)
 		write(1, "rrr\n", 4);
 	stats->total_ops++;
