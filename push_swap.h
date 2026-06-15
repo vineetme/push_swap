@@ -68,6 +68,7 @@ long		ft_atol(char *str);
 int			is_number_in_range(long number);
 int			error(void);
 int			has_duplicates(int argc, char **argv, int start);
+int			validate_inputs(int argc, char **argv, int start_index);
 t_node		*new_node(int value);
 t_node		*last_node(t_node *stack);
 void		add_back(t_node **stack, t_node *new);
@@ -121,5 +122,8 @@ void		move_b_to_top(t_node **b, t_node *target,
 void		restore_from_b(t_node **a, t_node **b, t_statistics *stats);
 void		chunk_sort(t_node **a, t_statistics *stats);
 void		free_stack(t_node **stack);
+int			execute_instructions(char *line, t_node **a, t_node **b,
+				t_statistics *stats);
+void		read_instructions(t_node **a, t_node **b, t_statistics *stats);
 
 #endif
