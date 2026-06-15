@@ -26,8 +26,10 @@ static void	rotate_stack(t_node **stack)
 
 void	rr(t_node **a, t_node **b, t_statistics *stats)
 {
-	rotate_stack(a);
-	rotate_stack(b);
+	if (*a && (*a)->next)
+		rotate_stack(a);
+	if (*b && (*b)->next)
+		rotate_stack(b);
 	if (!stats->silent)
 		write(1, "rr\n", 3);
 	stats->total_ops++;
