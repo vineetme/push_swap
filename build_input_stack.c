@@ -12,22 +12,25 @@
 
 #include "push_swap.h"
 
-t_node	*build_stack(int argc, char **argv, int start)
+t_node	*build_input_stack(int argc, char **argv, int start)
 {
-	int		i;
+	char	**split;
 	t_node	*stack;
-	t_node	*new;
+	int		count;
 
-	i = start;
-	stack = new_node(ft_atol(argv[i]));
-	if (!stack)
-		return (NULL);
-	i++;
-	while (i < argc)
+	if (argc - start != 1)
 	{
-		new = new_node(ft_atol(argv[i]));
-		add_back(&stack, new);
-		i++;
+		if (validate_inputs(argc, argv, start))
+			return (NULL);
+		return (build_stack(argc, argv, start));
 	}
+	split = ft_split(argv[start], ' ');
+	if (!split)
+		return (NULL);
+	count = split_count(split);
+	if (count == 0 || validate_inputs(count, split, 0))
+		return (free_split(split), NULL);
+	stack = build_stack(count, split, 0);
+	free_split(split);
 	return (stack);
 }

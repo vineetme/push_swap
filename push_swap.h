@@ -112,7 +112,7 @@ void		init_statistics(t_statistics *stats);
 void		resolve_strategy(t_config *config);
 void		execute_strategy(t_node **stack, t_config *config);
 void		print_benchmark(t_config *config);
-int			ft_strlen(char *str);
+size_t		ft_strlen(const char *str);
 void		radix_sort(t_node **a, t_statistics *stats);
 void		push_chunk_to_b(t_node **a, t_node **b, t_statistics *stats);
 void		move_a_to_top(t_node **a, t_node *target,
@@ -125,5 +125,11 @@ void		free_stack(t_node **stack);
 int			execute_instructions(char *line, t_node **a, t_node **b,
 				t_statistics *stats);
 void		read_instructions(t_node **a, t_node **b, t_statistics *stats);
+char		**ft_split(char const *s, char c);
+void		free_split(char **split);
+int			split_count(char **split);
+t_node		*build_input_stack(int argc, char **argv, int start);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
+char		*ft_strdup(const char *s);
 
 #endif

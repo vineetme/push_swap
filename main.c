@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"	
+#include "push_swap.h"
 
 int	main(int argc, char **argv)
 {
@@ -23,9 +23,9 @@ int	main(int argc, char **argv)
 	if (parse_flags(argc, argv, &config))
 		return (1);
 	config.stats.silent = 0;
-	if (validate_inputs(argc, argv, config.first_number))
+	stack = build_input_stack(argc, argv, config.first_number);
+	if (!stack)
 		return (error());
-	stack = build_stack(argc, argv, config.first_number);
 	assign_indexes(stack);
 	config.stats.disorder = compute_disorder(stack);
 	resolve_strategy(&config);

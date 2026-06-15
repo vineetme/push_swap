@@ -31,7 +31,13 @@ COMMON_SRCS = \
 		ft_strncmp.c \
 		ft_strlen.c \
 		init_statistics.c \
-		free_stack.c
+		free_stack.c \
+		build_input_stack.c \
+		ft_split.c \
+		ft_substr.c \
+		free_split.c \
+		split_count.c \
+		ft_strdup.c
 
 PUSH_SWAP_SRCS = \
 		main.c \
