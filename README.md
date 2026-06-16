@@ -1,5 +1,19 @@
-What are my valid Inputs? 
+*This project has been created as part of the 42 curriculum by vmeharia, kshalaba*
+
+# Push_swap
+
+## Description:
+
+This project was designed to learn to implement different sorting algorithms and to better understand algorithmic complexity. The goal is to sort a given list of integers in as little operations as possible. The list of operations should be printed on *stdout*. 
+
+## Instructions:
+
+Program compiles using **make**. After compilation the program can be executed using **./push_swap**.
+
+### What are my valid Inputs?
+ 
 Our program must accept:
+
 - A list of integers: These represent the numbers to be sorted into Stack A. The first 
 argument is the top of the stack.  
 - Strategy Flags: Optional flags passed at execution (--simple, --medium, --complex, --adaptive) 
@@ -7,7 +21,8 @@ to force the program to use a specific sorting algorithm.
 - A Telemetry Flag: An optional --bench flag that activates a specialized benchmark monitoring mode.  
 - Nothing: If no arguments are provided, the program must do nothing and cleanly exit.  
 
-What are my expected Outputs?
+### What are my expected Outputs?
+
 - Standard Output (stdout): The program must only print the sequence of allowed operation strings
  (sa, pb, ra, etc.). Every operation must be separated by a single \n and absolutely nothing else.  
 - Standard Error (stderr): 
@@ -15,7 +30,8 @@ What are my expected Outputs?
 2.  Benchmarks: If running in --bench mode, all the computed metrics (disorder %, total ops,
  counts of each move) must be sent strictly to stderr, leaving the regular moves clean on stdout.  
 
-What are the absolute Constraints?
+### What are the absolute Constraints?
+
 - The Non-Negotiables: Written in C, must pass the Norm check, zero memory leaks, and no 
 unexpected crashes (like Segfaults).  
 - Architecture Constraint: No using global variables.  
@@ -24,6 +40,8 @@ unexpected crashes (like Segfaults).
 - Algorithmic Architecture: Our executable must actively contain four distinct strategies. 
 - Human Constraints: This project requires exactly 2 learners. Both must understand everything and
  split the work, detailing who did what in the README.md.  
+
+### Flow of the code:
 
 Parse flags
 ↓
@@ -45,6 +63,20 @@ Benchmark output
 ↓
 Cleanup
 
+### Set of allowed operations:
+
+- sa (swap A): swap elements at the top of stack A, if there are two or more elelements.
+- sb (swap B): swap elements at the top of stack B, if there are two or more elelements.
+- ss: do sa and sb at the same time
+- pa (push A): put the first element from the top of stack B and put it at the top of stack A, if B is not empty.
+- pb (push B): put the first element from the top of stack A and put it at the top of stack B, if A is not empty.
+- ra (rotate A): move all elements of stack A up by one. The first element becomes the last one.
+- rb (rotate B): move all elements of stack B up by one. The first element becomes the last one.
+- rr: ra and rb at the same time.
+- rra (reverse rotate A): move all elements of stack A down by one. The last element becomes the first one.
+- rrb (reverse rotate B): move all elements of stack B down by one. The last element becomes the first one.
+- rrr: rra and rrb at the same time.
+
 ## Simple Strategy — Selection-Based Stack Sorting (O(n²))
 
 The Simple strategy is designed for small stacks and is conceptually similar to Selection Sort.
@@ -58,22 +90,22 @@ routine, after which all elements stored in stack B are pushed back to stack A.
 
 Initial stack:
 
-```text
+```
 A: 5 1 4 2 3
 B:
 ```
 
 The smallest value is `1`.
 
-```text
-ra
+```
+**ra**
 A: 1 4 2 3 5
 ```
 
 Move it to B:
 
 ```text
-pb
+**pb**
 A: 4 2 3 5
 B: 1
 ```
@@ -425,3 +457,36 @@ independent of the initial ordering of the data.
 The operation count grows approximately in proportion to `n log n`, making it highly effective for 
 large stacks and significantly more scalable than selection-based or chunk-based approaches.
 
+## Resources:
+
+AI was used for the purpose of better understanding of the concepts, for research and debugging. No AI was used to directly produce code.
+
+- https://medium.com/@ductran999/algorithm-sorting-1-bucket-sort-bf92236857c1
+
+- https://pythonread.github.io/dsa/bucket-sort.html#c-code
+
+- https://satyadeepmaheshwari.medium.com/sorting-large-datasets-with-limited-memory-the-chunked-merge-sort-approach-318275275c81
+
+- https://medium.com/@ys.yogendra22/radix-sort-sorting-c5b31152c48b
+
+## Contributions:
+
+Karina:
+
+- validate_inputs
+- build_stack
+- compute_disorder
+- resolve_strategy
+- execute_strategy
+- simple_sort
+
+Vineet:
+
+- init_statistics
+- parse_flags
+- assign_indexes
+- chunk_sort
+- radix_sort
+- print_benchmark
+- free_stack
+- bonus
