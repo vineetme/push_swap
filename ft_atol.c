@@ -35,11 +35,3 @@ long	ft_atol(char *str)
 	num = sign * num;
 	return (num);
 }
-/*
-#include <stdio.h>
-
-int main()
-{
-	printf("%ld\n", ft_atol("-3456"));
-}
-*/
